@@ -2,7 +2,7 @@
 
 Необходимо выполнить и представить на проверку следующие задания:
 
-1. [Первый Android проект](https://github.com/netology-code/and-homeworks/tree/master/android-components/1.1.1)
+1. [Универсальная форма ввода](https://github.com/netology-code/and-homeworks/tree/master/android-components/1.1.1)
 
-2. [Собственный Hello world](https://github.com/netology-code/and-homeworks/tree/master/android-components/1.1.2)
+2. [Бесконечный переход между экранами](https://github.com/netology-code/and-homeworks/tree/master/android-components/1.1.2)
 
