@@ -3,9 +3,9 @@
 
 Необходимо выполнить и предоставить на проверку следующие задачи:
 
-1. [Взаимоисключающие CheckBox](/1.2.view_components/1.2.1./)
-2. [Spinner «Страны-города-улицы»](/1.2.view_components/1.2.2./)
-3. [CalendarView «Сроки задачи»](/1.2.view_components/1.2.3./)
+1. [Взаимоисключающие CheckBox](/2.1.view_components/2.1.1./)
+2. [Spinner «Страны-города-улицы»](/2.1.view_components/2.1.2./)
+3. [CalendarView «Сроки задачи»](/2.1.view_components/2.1.3./)
 
 =======
 
