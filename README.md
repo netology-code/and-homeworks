@@ -4,7 +4,7 @@
 
 [1.1	Краткий обзор компонентов](/android-components/)
 
-1.2	Приложение "Hello World"
+[1.2	Приложение "Hello World"](/1.2.hello-world/)
 
 ### Блок 2. Android View
 
