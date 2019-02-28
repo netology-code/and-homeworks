@@ -8,7 +8,7 @@
 
 ### Блок 2. Android View
 
-[2.1	Компоненты View. Иерархия Views](/1.2.view_components/)
+[2.1	Компоненты View. Иерархия Views](/2.1.view_components/)
 
 2.2	Компоненты ViewGroup. SharedPrefs
 
