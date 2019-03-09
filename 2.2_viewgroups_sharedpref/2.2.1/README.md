@@ -3,15 +3,17 @@
 
 Одно из самых популярных приложений на телефон - это заметки. Давайте создадим свои собственные.
 Элементы приложения:
-EditText с заметкой
-Кнопка “Сохранить”- при клике на нее, заметка сохраняется в SharedPreferences
-При перезапуске приложения, если ранее была сохранена заметка - она отображается в EditText с заметкой
+* EditText с заметкой.
+* Кнопка “Сохранить” (при клике на нее, заметка сохраняется в SharedPreferences).
+
+При перезапуске приложения, если заметка ранее была сохранена, она отображается в EditText с заметкой.
 
 ### Реализация
 
-1. И так для реализации программы заметки требуется ресурсный файл с компонентами EditText и Button. 
-Создадим приложение и разместим эти компоненты во ViewGroup типа LinearLayout с вериткальной ориентацией.
-Учитывая выше сказанное ресурсный файл activity_main.xml примет следующий вид:
+1. Реализации программы заметки требуется ресурсный файл с компонентами EditText и Button. 
+Создадим приложение и разместим эти компоненты во ViewGroup типа LinearLayout с вертикальной ориентацией.
+Учитывая выше сказанное, ресурсный файл activity_main.xml примет следующий вид:
+
 ```  
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -39,7 +41,7 @@ EditText с заметкой
 ```  
 Где все элементы обозначены соответствующими Id. Лучшей практикой является перенос текстов из атрибута android:text и android:hint в файл string.xml.
 
-2. Слудеющим шагом будет инициализация элементов View в MainActivity. Инициализацию элементов осуществим в отдельно созданном методе initViews().
+2. Следующим шагом будет инициализация элементов View в MainActivity. Инициализацию элементов осуществим в отдельно созданном методе initViews().
 Вместе с инициализацией так же осуществим реализацию нажатия кнопки btnSaveNote.
 Инициализация элементов примет следующий вид:
 
@@ -78,8 +80,9 @@ public class MainActivity extends AppCompatActivity {
 }
 ```  
 
-3. И так у нас имеется поле ввода и кнопка сохранение. При нажатии на кнопку "Сохранить" нужно чтобы данные которые ввел пользователь в поле EditText mInputNote
-сохранились в SharedPreferences. Создадим SharedPreferences с именем "MyNote", добавив переменную myNoteSharedPref типа SharedPreferences:
+3. И так у нас имеется поле ввода и кнопка сохранения. При нажатии на кнопку "Сохранить" нужно, чтобы данные, которые ввел пользователь в поле EditText mInputNote, сохранились в SharedPreferences. 
+
+Создадим SharedPreferences с именем "MyNote", добавив переменную myNoteSharedPref типа SharedPreferences:
 
 ```  
     private EditText mInputNote;
@@ -109,14 +112,15 @@ public class MainActivity extends AppCompatActivity {
 	
   ```  
     
-4. Для сохранение текстового типа данных в myNoteSharedPref создадим ключ-константу NOTE_TEXT:
+4. Для сохранения текстового типа данных в myNoteSharedPref создадим ключ-константу NOTE_TEXT:
  
  ```  
    private static String NOTE_TEXT = "note_text";
  ```  
    
-5. Для того чтобы сохранить данные нужно получить объект SharedPreferences.Editor объекта myNoteSharedPref и воспользваться методом putString(key, value):
-	Поместим получение объекта и функцию сохранения текста в обработчик нажатия кнопки mBtnSaveNote, так же после сохранения данных, выведим на экран сообщение для пользователя.:
+5. Для того чтобы сохранить данные, нужно получить объект SharedPreferences.Editor объекта myNoteSharedPref и воспользоваться методом putString(key, value):
+* Поместим получение объекта и функцию сохранения текста в обработчик нажатия кнопки mBtnSaveNote. 
+* После сохранения данных выведем на экран сообщение для пользователя:
   
   ```  
 	 mBtnSaveNote.setOnClickListener(new View.OnClickListener() {
@@ -130,14 +134,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+   ```  
+
+
+6. Осталось вывести сохраненные данные (если таковые имеются) в поле mInputNote при перезапуке приложения. 
+Если перезапустить приложение, то введенные данные в поле mInputNote исчезнут.
+
+Создадим метод getDateFromSharedPref() и осуществим чтение данных из myNoteSharedPref:
+
+
 ```  
-  
-6. Осталось вывести сохраненые данные в поле mInputNote при перезапуке приложения (если таковые имеются). 
-   Сейчас если перезапустить приложение то введенные данные в поле mInputNote исчезнут.
-	Создадим метод getDateFromSharedPref() и осуществим чтения данных из myNoteSharedPref
-
-
-  ```  
 	private void getDateFromSharedPref(){
      String noteTxt = myNoteSharedPref.getString(NOTE_TEXT, "");
      mInputNote.setText(noteTxt);
@@ -146,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
 
 	Строка mInputNote.setText(noteTxt); присваивает полученные данные полю mInputNote.
 	
-7.	Осталось вызвать данных метод при запуске приложения в методе. Добавим данные метод в метод onCreate():
+7.	Осталось вызвать данные метод при запуске приложения в методе. Добавим данные в метод onCreate():
 	
   ```  
 	@Override
@@ -156,3 +162,4 @@ public class MainActivity extends AppCompatActivity {
         initViews();
         getDateFromSharedPref();
     }
+  ```
