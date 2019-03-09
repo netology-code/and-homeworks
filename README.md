@@ -10,7 +10,7 @@
 
 [2.1	Компоненты View. Иерархия Views](/2.1.view_components/)
 
-2.2	Компоненты ViewGroup. SharedPrefs
+[2.2	Компоненты ViewGroup. SharedPrefs](/2.2_viewgroups_sharedpref/)
 
 ### Блок 3. Ресурсы и стили
 
