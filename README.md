@@ -14,7 +14,7 @@
 
 ### Блок 3. Ресурсы и стили
 
-[3.1	Верстка графического интерфейса в Android. LinearLayout. RelativeLayout](/3.1 Layouts/)
+[3.1	Верстка графического интерфейса в Android. LinearLayout. RelativeLayout](/3.1%20Layouts/)
 
 3.2	Другие Виды Layouts
 
