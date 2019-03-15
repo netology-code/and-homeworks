@@ -2,7 +2,7 @@
 
 ### Блок 1. Структура проекта
 
-[1.1	Введение в Android. Краткий обзор компонентов](/android-components/)
+[1.1	Введение в Android. Краткий обзор компонентов](/1.1.android-components/)
 
 [1.2	Приложение "Hello World"](/1.2.hello-world/)
 
@@ -14,7 +14,7 @@
 
 ### Блок 3. Ресурсы и стили
 
-[3.1	Верстка графического интерфейса в Android. LinearLayout. RelativeLayout](/3.1%20Layouts/)
+[3.1	Верстка графического интерфейса в Android. LinearLayout. RelativeLayout](/3.1.Layouts/)
 
 3.2	Другие Виды Layouts
 
