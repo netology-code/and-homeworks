@@ -14,9 +14,9 @@
 
 ### Блок 3. Ресурсы и стили
 
-[3.1	Верстка графического интерфейса в Android. LinearLayout. RelativeLayout](/3.1.Layouts/)
+[3.1	Верстка графического интерфейса в Android](/3.1.Layouts/)
 
-[3.2	Другие Виды Layouts](/3.2.OtherLayouts/)
+[3.2	Другие виды Layouts](/3.2.OtherLayouts/)
 
 3.3	App resources, Config qualifier
 
