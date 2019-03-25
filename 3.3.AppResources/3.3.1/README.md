@@ -6,7 +6,7 @@
 Переведите свой экран калькулятора на использование этой возможности. 
 Создайте альтернативную верстку экрана калькулятора в соответствующей папке таким образом, чтобы элементы не пропадали с экрана и сохраняли гармоничное расположение.
 
-![](https://github.com/netology-code/and-homeworks/tree/master/3.3.AppResources/img)
+![](https://github.com/netology-code/and-homeworks/blob/master/3.3.AppResources/img/1.png)
 
 ### Реализация
 
