@@ -18,7 +18,7 @@
 
 [3.2	Другие виды Layouts](/3.2.OtherLayouts/)
 
-3.3	App resources, Config qualifier
+[3.3	App resources, Config qualifier](/3.3.AppResources/)
 
 3.4	Android styles
 
