@@ -35,7 +35,7 @@ config.setLocale(locale)
 getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
 ```
 			
-Перезапускаем нащ активити:
+Перезапускаем наш активити:
 
 ```
 recreate();
