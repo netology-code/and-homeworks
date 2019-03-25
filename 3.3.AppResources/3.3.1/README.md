@@ -6,14 +6,14 @@
 Переведите свой экран калькулятора на использование этой возможности. 
 Создайте альтернативную верстку экрана калькулятора в соответствующей папке таким образом, чтобы элементы не пропадали с экрана и сохраняли гармоничное расположение.
 
-![](https://github.com/netology-code/and-homeworks/blob/master/3.3.AppResources/img/1.png)
+![](https://github.com/netology-code/and-homeworks/blob/master/3.3.AppResources/img/3.png)
 
 ### Реализация
 
 1. Создайте директорию для горизонтальной верстки экрана (альбомный вид экрана).
 Необходимые директории создаются из меню res->New->Android Resource Direcotry.
 
-![](./img/4.png)
+![](https://github.com/netology-code/and-homeworks/blob/master/3.3.AppResources/img/4.PNG)
 
 В коненом итоге в директории res должны находится layout и layout-land директории, последний используется для верстки экрана в горизонтальном состоянии.
 Если вы создали, но дирекотрия не отображается, переключите вид отображение директорий и файлов с Android на Projects. В режиме Android пустые директории не отображаются.
@@ -25,6 +25,6 @@
 
 Примерный вид калькулятора
 
-![](././img/1.png)
+![](https://github.com/netology-code/and-homeworks/blob/master/3.3.AppResources/img/1.png)
 
-![](././img/2.png)
+![](https://github.com/netology-code/and-homeworks/blob/master/3.3.AppResources/img/2.png)
