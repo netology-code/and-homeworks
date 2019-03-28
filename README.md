@@ -20,7 +20,7 @@
 
 [3.3	App resources, Config qualifier](/3.3.AppResources/)
 
-3.4	Android styles
+[3.4	Android styles](/3.4.AndroidStyles/)
 
 ### Блок 4. Динамический интерфейс
 
