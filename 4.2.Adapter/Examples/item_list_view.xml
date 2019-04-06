@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:descendantFocusability="blocksDescendants"
+    android:padding="8dp">
+
+    <!-- Параметр descendantFocusability позволяет обрабатывать onClickItem()
+    для всего этого элемента списка. И все контролы не чувствительные к прикосновениям считаются
+    областью для нажатия. Кнопки будут работать, а иконки как часть области всего элемента -->
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_margin="8dp"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center_vertical"
+        tools:src="@mipmap/ic_launcher"/>
+
+    <!-- tools - нужны для проектирования верстки, обычно заполяются примерами
+    как это будет выглядеть, но при выполнении приложения не будут учитываться-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <!-- layout_weight - веса, чем меньше вес, тем выше приоритет отрисовки.
+        Сейчас есть более удобные контейнеры, например ConstraintLayout,
+        но базовае Layout-ы проще в понимания и нужнее в обучении :) -->
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorTitle"
+            android:textSize="@dimen/textSizeTitle"
+            android:ellipsize="end"
+            tools:text="Title Example"/>
+
+        <!-- ellipsize - место в котором можно будет поставить "...",
+        если заголовок окажется супердлинным. Может быть в начале, в середине и в конце
+        Например: "Однажды я решил стать разаб..."-->
+
+        <TextView
+            android:id="@+id/subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorSubtitle"
+            android:textSize="@dimen/textSizeSubtitle"
+            android:ellipsize="end"
+            tools:text="Subtitle Example"/>
+
+    </LinearLayout>
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="0"/>
+
+</LinearLayout>
