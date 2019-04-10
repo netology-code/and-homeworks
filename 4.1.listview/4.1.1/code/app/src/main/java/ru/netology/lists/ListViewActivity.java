@@ -2,6 +2,7 @@ package ru.netology.lists;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -21,13 +22,13 @@ public class ListViewActivity extends AppCompatActivity {
 
         String[] values = prepareContent();
 
-        ArrayAdapter<String> listContentAdapter = createAdapter(values);
+        BaseAdapter listContentAdapter = createAdapter(values);
 
         list.setAdapter(listContentAdapter);
     }
 
     @NonNull
-    private ArrayAdapter<String> createAdapter(String[] values) {
+    private BaseAdapter createAdapter(String[] values) {
         return new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, values);
     }
 
