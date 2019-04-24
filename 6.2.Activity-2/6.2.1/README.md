@@ -22,11 +22,11 @@
 В созданном в предыдущих ДЗ приложении нужно выводить лог перехода.
 Чтобы это сделать, выполните следующие шаги:
 
-1. Переопределите методы жизненного цикла в Activity:  onCreate, onStart, onResume, onPause, onStop, onDestroy, onRestart. Не забывайте вызывать методы супер класса при переопределении.
+1. Переопределите методы жизненного цикла в Activity:  'onCreate', 'onStart', 'onResume', 'onPause', 'onStop', 'onDestroy', 'onRestart'. Не забывайте вызывать методы супер класса при переопределении.
 
-2. В Activity создайте переменную (поле класса) int ActivityNumber = 0.
+2. В Activity создайте переменную (поле класса) 'int ActivityNumber = 0'.
 
-3. В каждом методе добавьте логирование, Log.d("Lifecycle", ActivityNumber+methodName);, где methodName - это название метода, например onStart, а ActivityNumber - число, сгенерированное в onCreate. 
+3. В каждом методе добавьте логирование, 'Log.d("Lifecycle", ActivityNumber+methodName);', где methodName - это название метода, например onStart, а ActivityNumber - число, сгенерированное в onCreate. 
 
 Это число нужно сохранять в рамках Activity в переменную ActivityNumber. Если число = 0, то нужно записать в ActivityNumber случайное значение, иначе — оставить без измененй, так мы сможем отследить действия каждого экземпляра Activity.
 
