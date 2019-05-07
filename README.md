@@ -42,7 +42,7 @@
 
 ### Блок 7. Переходы и действия в ОС Android. Android Intents
 
-7.1	Переходы и действия в ОС Android. Android Intents. Переход между экранами с передачей данных
+[7.1	Переходы и действия в ОС Android. Android Intents. Переход между экранами с передачей данных](/7.1.Intents/)
 
-7.2	Переходы и действия в ОС Android. Android Intents. Системные функции Android
+[7.2	Переходы и действия в ОС Android. Android Intents. Системные функции Android](/7.2.Intents-2/)
 
