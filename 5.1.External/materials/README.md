@@ -2,18 +2,21 @@
 
 ## Задача
 Создать приложение, которое из системной папки Downloads получает изображение и выводит его в ImageView.
-При запуске приложения, оно должно записывать информацио о запуске в private (частное) внешнее файловое хранилище (можно найти в папке Android, если откроете диспетчер файлов в телефоне).
+При запуске приложение должно записывать информацию о запуске в private (частное) внешнее файловое хранилище. Его можно найти в папке Android, если откроете диспетчер файлов в телефоне.
 
 ## Решение
-1. В Манифест надо добавить разрешения на работу с внешним файловым хранилищем
-Вставить 2 строки перед `</manifest>` 
+1. В Манифест нужно добавить разрешения на работу с внешним файловым хранилищем.
+Вставить 2 строки перед `</manifest>`. 
+
 ```
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
-2. В разметку добавить ImageView и присвоить ему id android:id="@+id/imageView"
+
+2. В разметку нужно добавить ImageView и присвоить ему id android:id="@+id/imageView".
 
 Получится примерно такой код:
+
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -35,8 +38,10 @@
         app:srcCompat="@android:drawable/btn_star_big_on" />
 </android.support.constraint.ConstraintLayout>
 ```
-4. В MainActivity создать функцию для выполнения логики приложения (загрузка картинки), назовём, например, LoadImg()
-5. Добавить метод для проверки доступности хранилища
+4. В MainActivity нужно создать функцию для выполнения логики приложения (загрузка картинки) и назвать ее, например, LoadImg().
+
+5. Нужно добавить метод для проверки доступности хранилища.
+
 ```
     public boolean isExternalStorageWritable() {
         String state = Environment.getExternalStorageState();
@@ -48,17 +53,24 @@
     }
 ```
 
-6. В методе LoadImg() реализовать получение пути к внешнему публичному файловому хранилищу, а именно к папке Downloads с помощью `Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS` и не забыть проверить с помощью метода из шага 5 возможность работы с хранилищем.
-7. Через Класс файл открыть файл
+6. В методе LoadImg() нужно реализовать получение пути к внешнему публичному файловому хранилищу, а именно к папке Downloads с помощью `Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS` и проверить возможность работы с хранилищем с помощью метода из шага 5 .
+
+7. Через Класс файл нужно открыть файл.
+
 ```
 File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "1.jpg");
 ```
-8. Используя класс Bitmap загрузить картинку в память
+
+8. Используя класс Bitmap, нужно загрузить картинку в память.
+
 ```
  Bitmap b = BitmapFactory.decodeFile(file.getAbsolutePath());
 ```
-9. Вывести картинку в `imageView` с помощью метода `setImageBitmap(...)`
+
+9. Нужно вывести картинку в `imageView` с помощью метода `setImageBitmap(...)`.
+
 Общий код метода LoadImg() получится следующим:
+
 ```
      private void LoadImg()
      {
@@ -78,18 +90,23 @@ File file = new File(Environment.getExternalStoragePublicDirectory(Environment.D
          }
      }
 ```
-10. Проверить и Запросить у пользователя разрешения на работу с внешним файловым хранилищем 
-В методе onCreate() добавить запрос статуса данного разрешения:
+10. Нужно проверить и запросить у пользователя разрешения на работу с внешним файловым хранилищем. 
+В методе onCreate() нужно добавить запрос статуса данного разрешения:
+
 ```
 /получаем статус разрешения на чтение из файлового хранилища
         int permissionStatus = ContextCompat.checkSelfPermission(this,
                 Manifest.permission.READ_EXTERNAL_STORAGE);
 ```
-Проверку полученного статуса
+
+Затем нужно добавить проверку полученного статуса:
+
 ```
 if (permissionStatus == PackageManager.PERMISSION_GRANTED)
 ```
-Если проверка пройдена, то можно вызывать наш метод и грузить им картинку, иначе надо запросить разрешение
+
+Если проверка пройдена, то можно вызывать наш метод и грузить им картинку, иначе надо запросить разрешение:
+
 ```
  if (permissionStatus == PackageManager.PERMISSION_GRANTED) {
 
@@ -102,11 +119,15 @@ if (permissionStatus == PackageManager.PERMISSION_GRANTED)
                     REQUEST_CODE_PERMISSION_READ_STORAGE);
         }
 ```
-Появилась неизвестная константа `REQUEST_CODE_PERMISSION_READ_STORAGE` это просто должно быть некое число, по которому мы потом сможем отфильтровать конкретное событие, но в любом случае её надо объявить в начале класса
+
+Появилась неизвестная константа `REQUEST_CODE_PERMISSION_READ_STORAGE`. Это просто должно быть некое число, по которому мы потом сможем отфильтровать конкретное событие. В любом случае её нужно объявить в начале класса.
+
 ```
 public static final int REQUEST_CODE_PERMISSION_READ_STORAGE = 10;
 ```
-После метода onCreate надо переопределить метод `onRequestPermissionsResult`, который обработает результат запроса у пользователя разрешения. И в нём будет опять же использоваться  объявленная выше константа, общиу код метода такой
+
+После метода onCreate надо переопределить метод `onRequestPermissionsResult`, который обработает результат запроса у пользователя разрешения. В нём будет опять же использоваться объявленная выше константа, общий код метода такой:
+
 ```
 @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -123,12 +144,13 @@ public static final int REQUEST_CODE_PERMISSION_READ_STORAGE = 10;
         }
     }
 ```
-Если права дали, то также грузим картинку, иначе ничего не делаем, прав нет.
+Если права дали, то также нужно грузить картинку. Иначе — ничего не делаем, прав нет.
 
 **На этом работа с публичным внешним файловым хранилищем завершена!**
 
-11. В частное внешнее файловое хранилище создадим файл с логами и запишем в него строку `"App loaded"`
-В методе `LoadImg()` убедившись, что хранилище смонтировано сделаем запись
+11. В частное внешнее файловое хранилище нужно создать файл с логами и записать в него строку `"App loaded"`.
+В методе `LoadImg()`, убедившись, что хранилище смонтировано, нужно сделать запись:
+
 ```
  File logFile = new File(getApplicationContext().getExternalFilesDir(null),"log.txt");
              try {
@@ -142,7 +164,8 @@ public static final int REQUEST_CODE_PERMISSION_READ_STORAGE = 10;
 
 
 
-## Общий код MainActivity
+## Общий код MainActivity:
+
 ```
 package ru.comdcomp.filedemo;
 
