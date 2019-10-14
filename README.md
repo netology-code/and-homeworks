@@ -6,6 +6,8 @@
 
 [1.2	Приложение "Hello World"](/1.2.hello-world/)
 
+[1.3. Проектирование интерфейсов](/1.3.interface%26debug)
+
 ### Блок 2. Android View
 
 [2.1	Компоненты View. Иерархия Views](/2.1.view_components/)
