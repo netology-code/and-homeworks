@@ -15,11 +15,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_vertical"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
@@ -41,7 +39,14 @@
 	
 ```
 
-3. Выберем стиль Theme.AppCompat.Light.NoActionBar для главной темы приложения и пропишем в манифест файле:
+3. Установите тулбар из xml файла в качестве системной панели приложения, для этого добавьте следующий код в метод `onCreate`:
+
+```
+        Toolbar myToolbar = findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+```
+
+4. Выберем стиль Theme.AppCompat.Light.NoActionBar для главной темы приложения и пропишем в манифест файле:
    
   ```  
    <application 
@@ -49,7 +54,7 @@
     />
   ```  
 
-4. Добавим выпадающий список меню в панель управления Toolbar. 
+5. Добавим выпадающий список меню в панель управления Toolbar. 
 	Для этого создадим файл menu_main.xml в папке res/menu/ (res/menu/menu_main.xml)
 	Добавим кнопку навигации в menu_main.
 	
@@ -73,7 +78,7 @@
 </menu>
   ```  
 
-5. Для того чтобы созданное меню появилась на панели управления, нужно переопределить метод onCreateOptionsMenu(Menu menu) в классе MainActivity,
+6. Для того чтобы созданное меню появилась на панели управления, нужно переопределить метод onCreateOptionsMenu(Menu menu) в классе MainActivity,
  где нужно добавить файл menu_main.xml, указав полный путь к нему (R.menu.menu_main): 
 
 ```  
@@ -85,7 +90,7 @@
     }
 ```  
 
-6. И так после запуска программы у нас появится панель управление с выпадающим меню. Теперь рассмотрим, как реализовать то или иное действие при нажатии на меню и выпадающего списка.
+7. И так после запуска программы у нас появится панель управление с выпадающим меню. Теперь рассмотрим, как реализовать то или иное действие при нажатии на меню и выпадающего списка.
 	Для этого в классе MainActivity переопределим метод onOptionsItemSelected(MenuItem item), которая вызывается при нажатии на элементы из списка menu_main.xml файла:
 
 * Установим проверку нажатии элемента по Id (строка  if (id == R.id.action_open_notes) )
@@ -108,7 +113,7 @@
 
 * Скомпилируем и запустим наше приложение.
 	
-7. Осталось при нажатии на меню списка: "Записная книжка", добавить функцию реализации открытия класса MainActivity из программы <Записная книжка>.
+8. Осталось при нажатии на меню списка: "Записная книжка", добавить функцию реализации открытия класса MainActivity из программы <Записная книжка>.
 	Для этого скопируем ресурсный файл activity_main.xml из программы <Записная книжка> и перенесем в нашу программу. 
 	Так как у нас уже существует activity_main.xml, то вставим скопированный файл xml под именем activity_notes.xml.
 	Так же поступим и с классом MainActivity из программы <Записная книжка>: скопируем и вставим под названием NotesActivity.
@@ -123,7 +128,7 @@
   
 Получаем Intent нужного активити и вызываем метод startActivity, который на входе получает Intent.
 	
-8. Все экраны активити должны быть прописаны в манифест-файле. Добавим NotesActivity в файл AndroidManifest.xml.
+9. Все экраны активити должны быть прописаны в манифест-файле. Добавим NotesActivity в файл AndroidManifest.xml.
 
     ```  
 	<activity android:name=".NotesActivity"/>
